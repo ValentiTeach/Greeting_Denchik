@@ -90,10 +90,15 @@
     opacity: 0; animation: rise .8s 1.1s forwards;
     z-index: 10;
   }
-  .scroll-hint .dot{
-    width:7px;height:7px;border-radius:50%;background:var(--green-bright);
-    animation:bob 1.6s ease-in-out infinite;
-  }
+  
+.scroll-hint .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  animation: bob 1.6s ease-in-out infinite;
+  margin-top: 15px; /* Збільшуй це значення, щоб опустити крапку ще нижче від тексту */
+}
 
   /* speed lines decoration */
   .speedlines{position:absolute;right:-40px;top:18%;display:flex;flex-direction:column;gap:14px;opacity:.5}
@@ -248,10 +253,6 @@
       <span><i class="span-green">тобі 26!</i></span>
     </h1>
     <p class="tag">Святкова відкритка для людини, яка живе на швидкості — і робить це красиво. 26 кіл пройдено, попереду ще більше відкритих трас. 🏍️🎉</p>
-    <div class="age-badge">
-      <span class="age-num">26</span>
-      <span class="age-label">років<br>на повний газ</span>
-    </div>
     <div class="scroll-hint">Гортай вниз<span class="dot"></span></div>
   </div>
 </header>
