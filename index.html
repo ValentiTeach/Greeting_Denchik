@@ -133,23 +133,31 @@
   section{padding:90px 0}
 
   /* ---------- PHOTOS ---------- */
-  .gallery{
+ .gallery{
     display:grid;grid-template-columns:repeat(12,1fr);gap:18px;
+    align-items: stretch; /* Важливо: змушує елементи сітки розтягуватися по висоті */
   }
   .photo{
     position:relative;border-radius:18px;overflow:hidden;
     background:var(--green-soft);
     border:1px dashed var(--green-line);
-    aspect-ratio:4/5;
-    display:flex;align-items:center;justify-content:center;
+    /* ЗАМІНА: прибираємо fixed aspect-ratio, використовуємо height:100% */
+    height:100%;
+    /* display:flex;align-items:center;justify-content:center; <- Прибираємо flex-центрування */
     box-shadow:var(--shadow);
   }
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo img{
+    /* ЗАМІНА: встановлюємо width та height на 100% та використовуємо cover */
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  
   .photo.big{grid-column:span 7}
   .photo.tall{grid-column:span 5}
   .photo .ph-hint{
     text-align:center;padding:24px;color:var(--green);
   }
+
+  
   .photo .ph-hint svg{width:42px;height:42px;margin-bottom:12px;stroke:var(--green-bright)}
   .photo .ph-hint b{display:block;font-size:.95rem;font-weight:600}
   .photo .ph-hint small{font-size:.78rem;color:var(--muted);font-family:monospace}
